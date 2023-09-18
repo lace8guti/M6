@@ -1,0 +1,135 @@
+### Javascript siempre se ejecuta en el cliente, en el navegador.
+### Un cliente hace una peticón al servidor y esta página puede contener javascript y el navegador lo ejecutará.
+
+## Otras tecnologías que se ejecuten en el navegador:
+# Applets de Java (si tiene la máquina virtual de Java instalada)
+# PLug ins 
+# AJAX
+
+### Características:
+
+Sintaxis similar a C i Java.
+Sin clases ni herencia.
+Ejecución interpretada pro el navegador.
+Sometido a restricciones de seguirodad (acceso a disco duro local)
+Facilidad para modificar dinámicament el documento HTML mediante DOM.
+
+### Usos habitaules 
+-> Eventos, sucesos.
+-> Comprobar datos de un formulario antes de enviarlo.
+
+### LImitaciones:
+
+Lenguaje de programación no estructural, no apto para aplicaciones demasiado grandes.
+Comportamiento dependiente del navegador. Algunos navegadores no lo ejecutan.
+Código fuente disponible para el cliente.
+
+Applets de Java:
+
+JSP == PHP
+
+Programas Java que se ejecutan en el navegador:
+El cliente descarga las clases (bytcodes)
+El cliente ejecuta el código en una JVM
+Se ejecuta con las restricciones de seguridad
+Introducir al navegador o en la ventana propia
+
+Algunos de los usos habituales:
+Aplicaciones gráficas interactivas
+Animaciones
+Gestión de formularios complejos
+Implementación de protocolos desconocidos para el navegador
+COmunicación con aplicaciones y BBDD, HTTP, sockets, RMI, CORBA.
+
+Limitaciones:
+No funciona en navegadores sin JVM o con versiones actualizadas
+Menor interaccción con el documento HTML que Javascript
+
+PLug ins:
+Son programas con código nativo que se extienden la funcionalidad del navegador.
+Flash player
+
+Limitaciones:
+Dependencia con el navegador, sistema operativo y arquitectura de la plataforma.
+
+AJAX:
+
+Permite la comunicación asícrona
+
+
+
+Tecnologías de ejecución en el servidor:
+- PHP
+- Servelets.
+- asp/asp.nET
+- Python
+
+
+Editores:
+
+Bloc de notas
+Gedit, nano, vim
+
+Editores de texto:
+Sublime Text o VSC.
+
+IDE
+Eclipse, Netbeans o VS.
+
+
+
+Inspector:
+
+Herramientas de desarrolladores del navegador:
+
+Cntrl+shft+I->  
+Cntrl+b->
+Cntrl+shft+R->
+Cntrl+P->
+Cntrl+shft+P->
+F8->
+F10->
+F11->
+shft+F11->
+
+Integrar Javascript a las páginas web:
+
+Incluir JavaScript en el mismo documento HTML
+Etiqueta NOSCRIPT
+Incluir en una etiqueta HTML
+Incluir JavaScript en un archivo a parte.
+
+También se puede introducir Javascript dentro de etiquetas HTML.
+
+A su vez, podemos contener todo el código Javascript en un fichero y llamarlo cuando lo necesitemos.
+
+Etiqueta NoScript:
+Mensaje que avisa que dicha página no funciona si no tienes Javascript.
+
+Declaración de variables:
+
+var
+let
+const
+
+Declaració implícita vs DEclaració explícita
+
+Normes per al nom:
+
+El nom no por començar per un número, sempre ha de començar per una lletra
+Es sensible a mayúsculas
+Se pueden utilizar guiones y barras bajas.
+
+Tipos de datos:
+
+Number, String, Array, boolean.
+
+Concatenación con el símbolo "+"
+
+typeof -> evalúa el tipo de variable con el que se está trabajando
+
+parseFloat(), parseInt() y parseString() transforma el tipo de variable.
+
+parseInt(num, base númérica)
+
+
