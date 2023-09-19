@@ -1,0 +1,278 @@
+## Si concatenas un número y un string, el resultado final será un string.
+
+## Función prompt():
+
+Reasignación dinámica de variables ->
+
+```
+<html>
+<head>
+	   <meta charset="UTF-8">
+<title>Página con JavaScript</title>
+<script language="javascript" type="text/javascript">
+<!--
+var valor = '723';
+alert ("La variable val " + valor + " i és de tipus " +
+typeof(valor));
+valor *= 1; //convertim la cadena de text en un valor
+alert("La variable ara val " + valor + " i és de tipus " +
+typeof(valor));
+var valor = 723;
+alert ("La variable val " + valor + " i és de tipus " +
+typeof(valor));
+valor += " "; // convertim el numeral en una cadena de text
+alert ("La variable ara val " + valor + " i és de tipus " +
+typeof(valor));
+//-->
+</script>
+</head>
+<body> </body>
+</html>
+
+```
+
+## Estrucuras condicionales:
+
+if, else if.
+
+¡Hay que evitar utilizar alert!
+
+## Switch:
+
+switch(expressió) {
+case valor_1:
+conjunt de sentències a executar si expressió és igual a valor_1;
+break;
+case valor_2:
+conjunt de sentències a executar si expressió és igual a valor_2;
+break;
+case valor_3:
+conjunt de sentències a executar si expressió és igual a valor_3;
+break;
+default:
+conjunt de sentències a executar si expressió NO és igual a cap dels
+valors comprovats anteriorment
+}
+
+## Operador ternario:
+
+L'operador ternari avalua la condició.
+Si es compleix, assigna el primer valor a la variable;
+Si no es compleix, li assigna el segon valor.
+❖ Sintaxi: variable = (condicio)?valor_1:valor_2;
+
+<script language="javascript">
+<!--
+var resposta=confirm("Premi un dels dos botons");
+resultat=(resposta==true)?"Vosté ha premut[ACCEPTAR]":"Vosté ha premut [CANCELAR]";
+/* També hagués valgut:
+resultat=(resposta)?"Vosté ha premut[ACCEPTAR]":"Vosté ha premut [CANCELAR]"; */
+alert(resultat);
+//-->
+</script>
+
+## OPerador coalescente null:
+
+Retorna el primer argument si és nul o no definit. En cas contrari, retorna el segon.
+
+let name = null;
+let text = "missing";
+let result = name ?? text;
+console.log(result);
+
+## Estructuras iterativas:
+
+for(valor inicial de la variable; condició; increment o decrement)
+{
+instruccions del cos del bucle;
+}
+<script language="javascript">
+<!--
+var compte, edat;
+for(compte=1; compte<=4; compte++)
+{
+edat = prompt("Introdueix la teva edat en xifres", "");
+edat = parseInt(edat);//convertim la variable edat a tipus Int
+if(edat<18){
+alert("Vosté és menor d'edat");
+}else{
+alert("Vosté és major d'edat");
+}
+}
+//-->
+</script>
+
+
+## DO - WHILE
+
+❖ La condició s'avalua al final.
+❖ Per tant, el cos del bucle s'executen, almenys, una vegada.
+Després, s'avalua la condició i comença la iteració o no.
+
+do{
+instruccions;
+}while(condició);
+<script language="javascript">
+do{
+entrada = prompt("Escrigui alguna cosa aquí", "");
+}while(entrada==null || entrada=="");
+alert("Vosté ha escrit " + entrada);
+</script>
+
+## FOR ... IN:
+
+❖ La seva definició exacta implica l'ús d'objectes, que és un
+element de programació que encara no anem a estudiar.
+❖ Per tant, solament es va a presentar l'estructura for...in
+adaptada al seu ús en arrays.
+❖ La seva definició formal adaptada als arrays és:
+
+for(indice in array) {
+...
+}
+var dies = ["Dilluns", "Dimarts", "Dimecres" , "Dijous",
+"Divendres" , "Dissabte" , "Diumenge" ];
+for(i in dies) {
+alert(dies[i]);
+}
+
+## FOR ... OF:
+
+var dies = ["Dilluns", "Dimarts", "Dimecres", "Dijous",
+"Divendres", "Dissabte", "Diumenge"];
+for(i of dies) {
+alert("el valor de i es: "+i+ "\n el contingut de dies[i] es:" +
+dies[i]);
+}
+
+La diferencia fundamental entre for-in y for-of reside en que en for-in, la "i" es un índice que lee la posición de un array, mientras que en for-of, "i" toma el valor de las iteraciones que se hacen a un array.
+
+## BREAK:
+
+<script language="javascript">
+var total = 0, numero, cicles;
+for(cicles = 1; cicles <= 10; cicles ++){
+numero = prompt("Introdueix un nombre positiu", "");
+numero = parseInt(numero);
+if(numero<1){ //si és 0 o negatiu, surt del bucle
+break;
+}
+total += numero;
+}
+alert("La suma dels nombres introduïts és " + total);
+</script>
+
+El break es obligatorio en las estructuras Switch.
+No se debe hacer un uso indebido del break.
+
+## CONTINUE:
+
+❖ En determinades ocasions, el que necessitem no és sortir del bucle, sinó finalitzar la iteració actual i continuar amb la següent.
+❖ Aquesta funció la realitza la sentència continue.
+
+<script language="javascript">
+var total = 0, numero, cicles;
+for (cicles = 1; cicles <= 10; cicles ++){
+numero = prompt("Introdueix un nombre positiu", "");
+numero = parseInt(numero);
+if (numero<1){ //si és 0 o negatiu, l'ignora i continua
+continue; // amb la següent iteració del bucle
+}
+total += numero;
+}
+alert("La suma dels nombres introduïts és " + total);
+</script>
+
+## BUCLES INFINITOS
+
+Hay que romperlos mediante un if-break.
+
+### CADENAS:
+
+❖ Es pot crear una cadena com un tipus primitiu:
+❖ Accedir a un caràcter d’una cadena:
+Javascript encapsula les cadenes a objectes String però hi ha
+diferències.
+En definitiva, NO és el mateix una cadena que un Objecte String. 
+return 'cat'.charAt(1) // retorna "a"
+return 'cat'[1] // retorna "a"
+‘cat’.charAt(1) = ‘o’; //no té cap efecte i dóna error
+var cadena1 = “hola”;
+var cadena2 = ‘adeu’;
+var cadena3 = String(“bon dia”);
+
+## Ejemplo de diferencia entre string y nwe String:
+
+a = "foo"
+a.b = "bar"
+console.log("a.b = " + a.b); //Undefined
+
+A = new String("foo");
+A.b = "bar";
+console.log("A.b = " + A.b); // bar
+
+## SCAPE CHARACTER:
+
+❖ Per escriure cadenes que continguin:
+
+let text1 = "We are the so-called \"Vikings\" from the north.";
+let text2 = "We are the so-called \’Vikings\’ from the north.";
+let text3 = "We are the so-called \\Vikings\\ from the north.";
+
+## Object string:
+
+❖ Propietat: String.length;
+❖ Mètodes de formateig:
+■ big() Lletra més gran.
+■ blink() Text parpallejant
+■ bold() Negreta
+■ fontcolor(color) Color de la lletra
+■ fontsize(1-7) Grandària de la lletra
+■ italics() Cursiva
+■ small() Lletra més petita
+■ strike() Barrat
+■ sub() Subíndex
+■ sup() Superíndex
+Nota: podem combinar diversos mètodes aplicats a un mateix objecte per aconseguir
+l'efecte desitjat: cadena.fontcolor('#F00').italics().bold();.
+Molts d’aquests mètodes no estàndards poden no funcionar en certs navegadors.
+
+❖ Mètodes per tractar cadenes:
+■ indexOf(seqüència) Retorna la primera posició on comença la seqüència dins de la cadena
+■ lastIndexOf() Retorna la última posició on comença la seqüència dins de la cadena
+■ charAt(posició) Retorna el caràcter que hi ha a la posició indicada
+■ charCodeAt(posició) Retorna el codi ASCII del caràcter que hi ha a la posició indicada
+■ slice(ini, fi) Retorna la porció de cadena compresa entre les posicions ini i fi-1
+■ split(separador, num) Converteix la cadena en un vector, fent servir el separador indicat per dividir els elements. El paràmetre num és opcional i pren els num primers elements. Si no ho indiquem, ho pren tot.
+■ substring(inici, final) Retorna la cadena amb els elements que hi ha des de la posició inici, fins a final-1 (diferencia entre slice, si inici i final són més petits de 0 es tractaran com a 0).
+■ substr (inici, mida). Retorna la cadena amb els elements que hi ha des de la posició inici fins a la mida especificada.
+■ toUpperCase() Converteix a majúscules
+■ toLowerCase() Converteix a minúscules
+■ concat(cadena2) Concatena dues cadenes per formar una tercera, que resultarà de la unió d'ambdues.
+■ replace(cadena1,cadena2) Busca les ocurrències de cadena1 i les reemplaça per cadena2.
+■ trim() Treu els possibles caràcters en blanc del principi i fi de la cadena. 
+
+
+## OBJECT DATE
+
+❖ El sistema emmagatzema els milisegons transcorreguts des de les 0 hores de l'1 de gener del 1970 a la data que assignem a l'objecte Date.
+❖ Crearem un objecte date usant el constructor Date.
+❖ Podem Operar amb dates:
+
+new Date();
+new Date(milliseconds);
+new Date(dateString);
+new Date(year, month, day, hours, minutes, seconds,
+milliseconds);
+var d1 = new Date(2022,0,1);
+var d2 = new Date(2022,0,1);
+var d3=(d2-d1)/ 1000/3600/24;
+document.write(d3+ " dies transcorreguts" );
+
+## OBJECT MATH:
+
+❖ Math no és una classe sinó un objecte ja creat. Llavors, invocarem els mètodes directament com
+❖ Les seves propietats són constants que podem fer servir en els càlculs aritmètics
+
+
+
