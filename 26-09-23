@@ -86,3 +86,218 @@ Dóna informació sobre el navegador del client.
 
 cookieEnabled -> les cookies estan activades?
 
+Objecte Screen:
+Dona informació sobre la pantalla del usuari
+La propietat screen.acailWidth ens dona l'altura sense incloure la barra de Windows.
+Per veure els seus mètodes i propietats vegeu aquesta pàgina: w3schools screen
+
+//Es llegeixen les propietats de la pantalla
+var amlada = screen.width;
+var altura = screen.height;
+var ampladaDisponible = screen.availWidth;
+var alturaDisponible = screen.availHeight;
+var profunditatColor = screen.colorDepth;
+// Es mostren a la pàgina
+document.write ("L'amplada del monitor es " + amplada + “
+píxels.");
+document.write ("L'altura del monitor es " + altura + "
+píxels.");
+document.write ("L'amplada de l'àrea disponible és " +
+ampladaDisponible + " pixels.");
+document.write ("L'altura de l'àrea disponible és " +
+alturaDisponible + " pixels.");
+document.write ("La profunditat del color és " +
+profunditatColor + " bits.");
+
+
+
+----------------------------
+
+Manipulació de text del desenvolupament web:
+
+OBJECTE DOCUMENT:
+
+A través d'aquest objecte javascript s'accedeix al document web.
+
+Mètodes d'accés al DOM:
+getElementById();
+➢ getElementsByName();
+➢ getElementsByTagName();
+❖ Mètodes de modificació del DOM:
+➢ createElement();
+➢ createTextNode();
+➢ appendChild();
+➢ replaceChild()
+➢ removeChild()
+➢ insertBefore();
+➢ cloneNode(true); 
+
+EXEMPLE1.1: OBJECTE DOCUMENT
+
+paragrafs = document.getElementsByTagName("p");
+paragraf2 = document.getElementsByTagName("p")[1];
+enllasos = paragraf2.getElementsByTagName("a");
+menuLateral = document.getElementById("menu");
+enlaces = menuLateral.getElementsByTagName("a");
+$(‘id’) = document.getElementBy(“id”);
+
+Manipulació de text desde javascript:
+
+Cada paràgraf de text que tenim al document HTML podem
+canviar-li determinades propietats: el color de la font, la tipografia,
+la grandària, etc.
+https://www.w3schools.com/jsref/dom_obj_style.asp
+❖ També podem canviar el contingut del paràgraf, amb els mètodes:
+➢ innerHTML
+➢ innerText
+➢ TextContent
+'''
+<html><head>
+<meta http-equiv="content-type" content="text/html;
+charset=utf-8">
+<script language="javascript">
+function vermell(){
+document.getElementById("t1").style.color="#FF0000";
+}
+function negre(){
+document.getElementById("t1").style.color="#000000";
+}
+</script>
+</head>
+<body>
+<h1 id="t1" onMouseOver="vermell();" onMouseOut="negre();">
+Aquest és un text que canvia de color gràcies a
+JavaScript
+</h1>
+<h1>
+Aquest és un text que no canvia de color
+</h1>
+</body>
+</html>
+'''
+
+'''
+<html><head>
+<meta http-equiv="content-type"
+content="text/html;charset=utf-8">
+<script language="javascript">
+var matriuColors = new
+Array("#000000","#FF0000","#00FF00","#FFFF00", "#00FFFF","#00FF00"
+,"#999999","#FF99FF","#66FF99","#0000FF");
+function canviar(){
+numero = parseInt(Math.random()*9);
+document.getElementById("titol").style.color=matriuColors[numero]
+;
+}
+</script>
+</head><body>
+<h1 id="titol" onMouseOver="canviar();"
+onMouseOut="canviar();">
+Aquest és un text que canvia de color gràcies a
+JavaScript
+</h1>
+<h1> Aquest és un text que no canvia de color </h1>
+</body></html>
+'''
+
+'''
+<p id="myP"> This element has extra spacing and contains <span>a span
+element</span>.</p>
+let text = document.getElementById("myP").innerText;
+//retorna: “This element has extra spacing and contains a span element.“
+let text = document.getElementById("myP").innerHTML;
+//retorna: ” This element has extra spacing and contains <span>a span
+element</span>.”
+let text = document.getElementById("demo").textContent;
+//retorna: “ This element has extra spacing and contains a span element.”
+'''
+
+'''
+<!DOCTYPE html> <html>
+<body>
+<h1>The Element Object</h1>
+<h2>The Differences Between innerText,
+innerHTML and textContent</h2>
+<p id="myP"> This element has extra spacing
+and contains <span>a span
+element</span>.</p>
+<button onclick="getinnerHTML()">Get
+innerHTML</button>
+<button onclick="getinnerText()">Get
+innerText</button>
+<button onclick="gettextContent()">Get
+textContent</button>
+<pre id="demo"></pre>
+<p>The innerText property is not supported in
+IE 9 and earlier.</p>
+<p>The textContent property is not supported
+in IE 8 and earlier.</p>
+<script language=”javascript”>
+function getinnerText() {
+let text =
+document.getElementById("myP").innerText;
+document.getElementById("demo").innerText
+= text;
+}
+function getinnerHTML() {
+let text =
+document.getElementById("myP").innerHTML;
+document.getElementById("demo").innerText
+= text;
+}
+function gettextContent() {
+let text =
+document.getElementById("myP").textContent;
+document.getElementById("demo").innerText
+= text;
+}
+</script>
+</body>
+</html>
+'''
+
+Manipulació d'imatges:
+
+Les imatges d’una pàgina web s’encapsulen en un objecte de
+JavaScript anomenat Image
+❖ Es pot accedir a les imatges d’una pàgina web de 2 maneres:
+➢ A través de document.getElementById()
+➢ A través del array Images[] que conté una referència a
+cadascuna de les imatges que hi ha al document HTML
+
+<img id=”imat1” src=”images/poble.jpg” />
+document.getElementById(“imat1”).width=”50”;
+<img id=”imat1” src=”images/poble.jpg” />
+<img name=”imat2” src=”images/ciutat.png” />
+document.images[0].width=”50”; ... o bé... document.images[“imat1”].height=”40”;
+document.images[1].border=”3”; ... o bé... document.images[“imat2”].height=”80”;
+
+PROPIETATS DE L’OBJECTE IMAGE DE JAVASCRIPT
+border, complete, hspace, height, lowsrc, name, src, vspace, width.
+var img = new Image(optionalWidth, optionalHeight);
+img.src = ”url.imatge.jpg”;
+
+MÉS SOBRE L’OBJECTE IMAGE
+❖ L'esdeveniment onAbort d'una imatge s'activa quan l'usuari deté la
+seva càrrega.
+❖ L'esdeveniment onError d'una imatge s'activa quan, per algun
+motiu, la imatge no pot ser carregada.
+Per donar a una propietat la ruta d'un fitxer (imatge, text, etc.) cal fer-ho
+mitjançant la funció “url(ruta del fitxer)”.
+
+document.getElementById(“t1”).style.backgroundImage=”url(images/smile.jpg)”;
+document.getElementById(“t1”).style.backgroundImage=”smile.jpg”;
+
+MANIPULACIÓ D’ENLLAÇOS AMB JAVASCRIPT
+❖ Per manipular els enllaços des de JavaScript podem fer-ho
+mitjançant la matriu document.links[], que emmagatzema una
+referència a cadascun dels enllaços del document per ordre
+d'aparició
+❖ També hi podem accedir a través de:
+document.getElementById(“identificador”)
+
+PROPIETATS DELS ENLLAÇOS
+hash, host, hostname, href, innerHTML, pathname, port, protocol, search, target, text.
+
+
+
