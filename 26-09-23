@@ -1,0 +1,88 @@
+Javascript:
+
+BOM:
+Col·lecció d'objectes que permeten als programes Javascript ficar-se en cada racó del navegador web.
+
+Objecte WIndow: Compatible amb tots els navegadors
+
+Propietats objecte Window
+
+Mètodes de objecte window
+alert
+confirm
+promt
+focus
+
+Atributs de objecte window
+
+Events de l'objecte window
+setTimeout: una función se ejecutará de aquí a un tiempo
+setInterval: una función se ejecutará en un intervalo cada X tiempo.
+
+Exemples objecte WINDOW:
+
+ex01: obrir una finestra. window.open();
+ex02: Moure i escalar una finestra:
+finestra.moveTo(coordenada_x, coordenada_y)
+finestra.resizeTo(amplaria, altura) //expressades en píxels
+❖ ex03 i ex04: programar retards i intervals
+Per programar un retard, fem servir la funció setTimeout()
+var nomRetard = setTimeout(“funcio_o_instruccions”,
+temps_en_ms)
+Per esborrar un retard programat:
+var retard1 = setTimeout(borrar(), 1000);
+clearTimeout(retard1);
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Exemple 4. setTimeout II</title>
+<script language="javascript">
+<!--
+	function interval(){
+		status="";
+		periode = setInterval("mostrar()",5000);
+	}
+	var temps = 0;
+
+	function mostrar(){
+		temps += 5;
+		alert("Vostè duu " + temps + " segons en aquesta pàgina.");
+	}
+//-->
+</script>
+</head>
+<body onLoad="interval(); ">
+	Observeu ... 
+</body>
+</html>
+```
+
+```
+
+
+Objecte Location:
+Location.href
+Cambia la url que definamos
+Propietats de location
+
+Objecte History:
+
+history.back(), history.forward() i history.go(desplaçament).
+Te permite avanzar y retrocer en pàgines web visitadas
+
+Objecte Document:
+
+get element by id
+
+innerhtml -> sobreesribe el contenido de una etiqueta html
+
+Objecte navigator:
+
+Dóna informació sobre el navegador del client.
+❖ Les seves propietats són únicament de lectura
+
+cookieEnabled -> les cookies estan activades?
+
